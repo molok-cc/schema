@@ -1,0 +1,14 @@
+namespace Molok;
+
+table Request {
+  id:uint64;
+  opaque:uint64;
+  body:[byte];
+}
+
+table Response {
+  id:uint64;
+  opaque:uint64;
+  status:int;
+  body:[byte];
+}

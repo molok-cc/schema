@@ -1,0 +1,38 @@
+namespace Molok.Auth;
+
+enum ID : uint64 {
+  Challenge = 0x7993aa2490416ffe,
+  ChallengeResponse = 0xa6707aa6815923c1,
+  Authentication = 0xc25edca57df81461,
+  AccessTokenResponse = 0x9c718bb6071728c7,
+  RefreshToken = 0xa9312f297e7c6171,
+}
+
+table Challenge {
+  account:[byte];
+  client_id:[byte];
+  client_secret:[byte];
+}
+
+table ChallengeResponse {
+  status:short;
+  code:[byte];
+  nonce:[byte];
+}
+
+table Authentication {
+  code:[byte];
+  digest:[byte];
+}
+
+table AccessTokenResponse {
+  status:short;
+  access_token:[byte];
+  refresh_token:[byte];
+}
+
+table RefreshToken {
+  refresh_token:[byte];
+  client_id:[byte];
+  client_secret:[byte];
+}
